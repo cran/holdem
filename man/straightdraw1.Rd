@@ -16,9 +16,7 @@ straightdraw1(x)
 %%     ~~Describe \code{x} here~~
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 returns 26 if you already have a straight.
 returns 4 is there are 2 possibilities for a straight. 
@@ -30,21 +28,14 @@ returns 0 otherwise.
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Frederic Paik Schoenberg
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+
 \examples{
 straightdraw1(c(2,5,6,7,9,14))
 straightdraw1(c(4,5,6,7,9,14))

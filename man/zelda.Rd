@@ -75,14 +75,18 @@ pre-flop:
 	 Suited A2-AJ: call a small raise.
 	 22-99: call a small raise.
 	 TT-KK: make a huge raise. If someone's raised huge already, then go all in.
-	 AA: make a small raise. If there's been a raise already, then double how much it is to you.
+	 AA: make a small raise. If there's been a raise already, 
+	 then double how much it is to you.
 post-flop: 
 	 If there's a pair on the board and you don't have a set, then check/call up to small bet.
 	 Same thing if there's 3-of-a-kind on the board and you don't have a full house or more.
-	 If you have top pair or an overpair or two pairs or a set, make a big bet (call any bigger bet). 
-	 Otherwise, if nobody's made even a small bet yet, then with prob. 20\% make a big bluff bet.
+	 If you have top pair or an overpair or two pairs or a set, make a big bet 
+	 (call any bigger bet). 
+	 Otherwise, if nobody's made even a small bet yet, 
+	 then with prob. 20\% make a big bluff bet.
 	 If you're the last to decide and nobody's bet yet, then increase this prob. to 50\%.
-	 If you have an inside straight draw or flush draw then make a small bet (call any bigger bet).
+	 If you have an inside straight draw or flush draw then make a small bet 
+	 (call any bigger bet).
 	 If you have a straight or better, then just call.
 	 Otherwise fold.
 after turn: 
@@ -114,18 +118,11 @@ integer indicating the number of chips you are betting. 0 means fold.
 Schoenberg, F. (2011). An Introduction to Probability with Texas Holdem 
 Examples. Taylor and Francis, New York.
 }
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
@@ -141,11 +138,13 @@ function(numattable1, crds1, board1,  round1, currentbet,  mychips1, pot1,
 	## AK: Make a big raise if nobody has yet. Otherwise call.
 	## AQ: call a small raise, or make one if nobody has yet.
 	## AJ, AT, KQ, KJ, QJ: call a tiny raise.
-	## A9, KT, K9, QT, JT, T9: call a tiny raise if in late position (within 2 of the dealer).
+	## A9, KT, K9, QT, JT, T9: call a tiny raise if in late position 
+	## (within 2 of the dealer).
 	## Suited A2-AJ: call a small raise.
 	## 22-99: call a small raise.
 	## TT-KK: make a huge raise. If someone's raised huge already, then go all in.
-	## AA: make a small raise. If there's been a raise already, then double how much it is to you.
+	## AA: make a small raise. If there's been a raise already, 
+	## then double how much it is to you.
 	
 	a3 = 2*blinds1+1 ## how much a tiny raise would be
 	a4 = 4*blinds1+1 ## how much a small raise would be
@@ -193,22 +192,27 @@ function(numattable1, crds1, board1,  round1, currentbet,  mychips1, pot1,
     if(round1 == 2){ ## post-flop: 
 	## If there's a pair on the board and you don't have a set, then check/call up to small bet.
 	## Same thing if there's 3-of-a-kind on the board and you don't have a full house or more.
-	## If you have top pair or an overpair or two pairs or a set, make a big bet (call any bigger bet). 
-	## Otherwise, if nobody's made even a small bet yet, then with prob. 20\% make a big bluff bet.
+	## If you have top pair or an overpair or two pairs or a set, 
+	## make a big bet (call any bigger bet). 
+	## Otherwise, if nobody's made even a small bet yet, 
+	## then with prob. 20\% make a big bluff bet.
 	## If you're the last to decide and nobody's bet yet, then increase this prob. to 50\%.
-	## If you have an inside straight draw or flush draw then make a small bet (call any bigger bet).
+	## If you have an inside straight draw or flush draw then make 
+	## a small bet (call any bigger bet).
 	## If you have a straight or better, then just call.
 	## Otherwise fold.
 	
-	a5 = min(sum(roundbets[,1]),mychips1) ## how much a big bet would be (prev round's pot size)
+	a5 = min(sum(roundbets[,1]),mychips1) ## how much 
+	## a big bet would be (prev round's pot size)
 	a6 = min(.5*sum(roundbets[,1]),mychips1) ## how much a small bet would be	
-	x = handeval(c(crds1[1:2,1], board1[1:3,1]), c(crds1[1:2,2], board1[1:3,2])) ## what you have
+	x = handeval(c(crds1[1:2,1], board1[1:3,1]), 
+	c(crds1[1:2,2], board1[1:3,2])) ## what you have
 	x1 = handeval(c(board1[1:3,1]),c(board1[1:3,2])) ## what's on the board
 	y = straightdraw1(c(crds1[1:2,1], board1[1:3,1]))
 	z = flushdraw1(c(crds1[1:2,2], board1[1:3,2]))
 	topcard1 = max(board1[1:3,1])
 	a7 = runif(1) ## random number uniformly distributed between 0 and 1
-	a8 = (1:numattable1)[roundbets[,1] == roundbets[ind1,1]] ## others who can still bet with you
+	a8 = (1:numattable1)[roundbets[,1] == roundbets[ind1,1]] ## others who can still bet
 	## The next 5 lines may seem weird, but the purpose is explained in the next comment:
 	a9 = a8 - dealer1
 	for(i in 1:length(a9)) if(a9[i]<.5) a9[i] = a9[i] + numattable1
@@ -232,12 +236,14 @@ function(numattable1, crds1, board1,  round1, currentbet,  mychips1, pot1,
 	## If there's a pair on the board and you don't have a set, then check/call up to small bet.
 	## Same thing if there's 3-of-a-kind on the board and you don't have a full house or more.
 	## Otherwise, if you have top pair or better, go all in.
-	## If you had top pair or overpair but now don't, then check/call a medium bet but fold to more.
+	## If you had top pair or overpair but now don't, then check/call a medium bet 
+	## but fold to more.
 	## If you have an inside straight draw or flush draw then check/call a medium bet as well.
 	## Otherwise check/fold.
 	a6 = min(1/3*sum(roundbets[,1:2]),mychips1) ## small bet (1/3 of prev round's pot size)
 	a5 = min(.75*sum(roundbets[,1:2]),mychips1) ## medium bet (3/4 of prev round's pot size)
-	x = handeval(c(crds1[1:2,1], board1[1:4,1]), c(crds1[1:2,2], board1[1:4,2])) ## what you have
+	x = handeval(c(crds1[1:2,1], board1[1:4,1]), 
+	c(crds1[1:2,2], board1[1:4,2])) ## what you have
 	x1 = handeval(c(board1[1:4,1]),c(board1[1:4,2])) ## what's on the board
 	y = straightdraw1(c(crds1[1:2,1], board1[1:4,1]))
 	z = flushdraw1(c(crds1[1:2,2], board1[1:4,2]))
@@ -262,7 +268,8 @@ function(numattable1, crds1, board1,  round1, currentbet,  mychips1, pot1,
 	## If you have one pair, then check/call a small bet.
 	## With nothing, go all-in with probability 10\%; otherwise check/fold.
 	a6 = .45+runif(1)/10  ## random number between .45 and .55
-	a5 = min(a6*sum(roundbets[,1:3]),mychips1) ## small bet: around 1/2 of pot size; VARIES RANDOMLY
+	a5 = min(a6*sum(roundbets[,1:3]),mychips1) ## small bet: 
+	## around 1/2 of pot size; VARIES RANDOMLY
 	x = handeval(c(crds1[1:2,1], board1[1:5,1]), c(crds1[1:2,2], board1[1:5,2]))
 	x1 = handeval(c(board1[1:5,1]),c(board1[1:5,2])) ## what's on the board
 	if((x1 > 1000000) && (x < 3000000)){

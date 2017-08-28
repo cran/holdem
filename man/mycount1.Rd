@@ -16,9 +16,7 @@ mycount1(x)
 %%     ~~Describe \code{x} here~~
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
  and their cardinality
 %%  ~Describe the value returned
@@ -27,21 +25,13 @@ mycount1(x)
   \item{ct }{cardinality of each of the values}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
 Frederic Paik Schoenberg
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,

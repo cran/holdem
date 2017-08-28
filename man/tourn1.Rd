@@ -11,7 +11,9 @@ the top 3 finishers get points, and they get 13, 8, and 5 points
 respectively. See chapter 8 of Schoenberg, F. (2011).
 }
 \usage{
-tourn1(name1, decision1, chipstart1 = 1000, bigstart1 = 20, inc1 = 1.5, winners1 = 3, myfast1 = 2, t1 = 0.5, t2 = 1, graphiccutoff1 = 0.1, lowercut1 = 30)
+tourn1(name1, decision1, chipstart1 = 1000, 
+bigstart1 = 20, inc1 = 1.5, winners1 = 3, myfast1 = 2, 
+t1 = 0.5, t2 = 1, graphiccutoff1 = 0.1, lowercut1 = 30)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -92,15 +94,9 @@ Examples. Taylor and Francis, New York.
 \author{
 Frederic Paik Schoenberg
 }
-\note{
-%%  ~~further notes~~
-}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 name1 = c("gravity","tommy","ursula","timemachine","vera","william","xena")
 decision1 = list(gravity, tommy, ursula, timemachine, vera, william, xena) 
@@ -182,7 +178,8 @@ function(name1, decision1, chipstart1 = 1000, bigstart1 = 20,
 		k = k+1
 		if(k > tables1[[1]][i]) k = 1
 		cat(j)
-		x32 = hand1(tables1[[1]][i], tables1[[1+i]], chip3, blinds1, k, ntable1,myfast1,t1,t2,chipstart1,lowercut1, decision1) 
+		x32 = hand1(tables1[[1]][i], tables1[[1+i]], chip3, 
+		blinds1, k, ntable1,myfast1,t1,t2,chipstart1,lowercut1, decision1) 
 		chip2 = x32$chips2
 		chip1[tables1[[1+i]]] = chip2
 		chipdif8 = (abs(chip1-chip7)/pmax(chip1,chip7,rep(1,nplayers1)) > graphiccutoff1)
@@ -190,9 +187,12 @@ function(name1, decision1, chipstart1 = 1000, bigstart1 = 20,
 		    text(x=c(1:nplayers1),y=chip1,cex=2,labels=name1[1:nplayers1],srt=270,col=2)
 		    chip7 = chip1
 		} else if(sum(chipdif8)>.5){
-		    text(x=c(1:nplayers1)[chipdif8],y=chip7[chipdif8],cex=2,col="white",labels=name1[chipdif8],srt=270)
-		    text(x=c(1:nplayers1)[chipdif8],y=chip7[chipdif8],cex=2,col="white",labels=name1[chipdif8],srt=270)
-		    text(x=c(1:nplayers1)[chipdif8],y=chip1[chipdif8],cex=2,col=2,labels=name1[chipdif8],srt=270)
+		    text(x=c(1:nplayers1)[chipdif8],
+		    y=chip7[chipdif8],cex=2,col="white",labels=name1[chipdif8],srt=270)
+		    text(x=c(1:nplayers1)[chipdif8],
+		    y=chip7[chipdif8],cex=2,col="white",labels=name1[chipdif8],srt=270)
+		    text(x=c(1:nplayers1)[chipdif8],
+		    y=chip1[chipdif8],cex=2,col=2,labels=name1[chipdif8],srt=270)
 		    chip7[chipdif8] = chip1[chipdif8]
 		}
 		## Now remove eliminated players, even if they were blinds.
@@ -226,8 +226,10 @@ function(name1, decision1, chipstart1 = 1000, bigstart1 = 20,
 	   text(1*nplayers1/z2,nplayers1*chipstart1, "1st:",col=4,cex=2)
 	    text(2*nplayers1/z2,nplayers1*chipstart1, "2nd:",col=4,cex=2)
 	    text(3*nplayers1/z2,nplayers1*chipstart1, "3rd:",col=4,cex=2)
-	    if(z2 > 4.5) for(z1 in c(4:winners1)) text(z1*nplayers1/z2,nplayers1*chipstart1, paste(z1,"th:"),col=4,cex=2)
-	    for(z1 in c(1:winners1)) text(z1*nplayers1/(winners1+1),(nplayers1/2)*chipstart1,name1[places1[z1]],col=4,cex=2)
+	    if(z2 > 4.5) for(z1 in c(4:winners1)) 
+	    text(z1*nplayers1/z2,nplayers1*chipstart1, paste(z1,"th:"),col=4,cex=2)
+	    for(z1 in c(1:winners1)) text(z1*nplayers1/(winners1+1),
+	    (nplayers1/2)*chipstart1,name1[places1[z1]],col=4,cex=2)
 	}
     }
     places1

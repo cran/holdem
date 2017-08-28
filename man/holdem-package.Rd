@@ -39,8 +39,7 @@ Schoenberg, F. (2011). An Introduction to Probability with Texas Holdem
 Examples. Taylor and Francis, New York.
 }
 \keyword{ package }
-\seealso{
-}
+
 \examples{
 ## out of 1000 hands with 2 players, see how many times 
 ## both players get at least a straight, if neither ever folds.

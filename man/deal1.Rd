@@ -38,15 +38,9 @@ Examples. Taylor and Francis, New York.
 \author{
 Frederic Paik Schoenberg
 }
-\note{
-%%  ~~further notes~~
-}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 ## out of 1000 hands with 2 players, see how many times 
 ## both players get at least a straight, if neither ever folds.

@@ -17,9 +17,7 @@ twopair1(x)
 %%     ~~Describe \code{x} here~~
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 225 * your higher pair + 15 * the lower pair + the number of your kicker, 
 if you have two pairs, or 0 otherwise.
@@ -29,21 +27,13 @@ if you have two pairs, or 0 otherwise.
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Frederic Paik Schoenberg
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,

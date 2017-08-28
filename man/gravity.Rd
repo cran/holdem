@@ -84,18 +84,9 @@ integer indicating the number of chips you are betting. 0 means fold.
 Schoenberg, F. (2011). An Introduction to Probability with Texas Holdem 
 Examples. Taylor and Francis, New York.
 }
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,

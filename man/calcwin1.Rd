@@ -25,31 +25,13 @@ calcwin1(numattable1, playerseats1, b3, b7)
 %%     ~~Describe \code{b7} here~~
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Frederic Paik Schoenberg
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
@@ -77,7 +59,8 @@ function(numattable1,playerseats1, b3, b7){
 	n1 = sum(inmuch1 >= amount1)  ## How many bet at least that much.
 	pl1 = c(1:numattable1)[inmuch1 >= amount1]  ## Who bet at least that much
 	# winner1 = pl1[order(qual1[pl1],decreasing=T)[1]]  
-	winner1 = pl1[c(1:n1)[qual1[pl1]==max(qual1[pl1])]] ## Who has best hand (may be vector, if ties)
+	winner1 = pl1[c(1:n1)[qual1[pl1]==max(qual1[pl1])]] 
+	## Who has best hand (may be vector, if ties)
 	more1 = amount1 - prevamount1
 	for(k in winner1) chips1[k] = chips1[k] + round(n1*more1/length(winner1))
 	pot1 = pot1 - n1*more1

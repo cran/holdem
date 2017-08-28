@@ -16,9 +16,7 @@ full1(x)
 Numbers of your cards and the board cards.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 15 times the number of your triplet + the number of your pair in your best 
 five card hand, or 0 if you don't have a full house. 
@@ -30,21 +28,9 @@ For instance, if you have 22 and the board is 2AAQQ, then it returns
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 x = c(2,2,2,14,14,12,12)
 full1(x)

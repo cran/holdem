@@ -16,9 +16,7 @@ four1(x)
 Numbers of your cards and the board cards.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 15*number of the foursome + the number of your next highest other card.
 For instance, if your best 5 card hand is 8888K, then it will return 15*8 
@@ -30,21 +28,13 @@ Returns 0 if you don't have 4 of a kind.
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Frederic Paik Schoenberg
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 x = c(8,8,8,8,13,12,2)
 four1(x)

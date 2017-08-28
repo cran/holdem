@@ -34,13 +34,6 @@ payouts for the top finishers
 If length(name1) < k or length(decision1) < k, there will be errors. 
 %%  ~~ If necessary, more details than the description above ~~
 }
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{d1 }{full matrix of results in each tournament}
-%%  \item{d2 }{total payouts for each player}
-%% ...
-}
 \references{
 Schoenberg, F. (2011). An Introduction to Probability with Texas Holdem 
 Examples. Taylor and Francis, New York.
@@ -48,15 +41,9 @@ Examples. Taylor and Francis, New York.
 \author{
 Frederic Paik Schoenberg
 }
-\note{
-%%  ~~further notes~~
-}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 name1 = c("gravity","tommy","ursula","timemachine","vera","william","xena")
 decision1 = list(gravity, tommy, ursula, timemachine, vera, william, xena) 

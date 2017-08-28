@@ -83,18 +83,10 @@ integer indicating the number of chips you are betting. 0 means fold.
 Schoenberg, F. (2011). An Introduction to Probability with Texas Holdem 
 Examples. Taylor and Francis, New York.
 }
-\author{
-%%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
-}
+
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
@@ -104,10 +96,12 @@ Examples. Taylor and Francis, New York.
 function(numattable1, crds1, board1,  round1, currentbet,  mychips1, pot1, 
     roundbets, blinds1, chips1, ind1, dealer1, tablesleft){
     ## if pair of at least 9, then all in  
-    ## if nobody's bet (or raised the blinds) yet, then bet (or raise the blinds) the minimum amount possible.
+    ## if nobody's bet (or raised the blinds) yet, 
+    ## then bet (or raise the blinds) the minimum amount possible.
     ## note: if you're big blind, or if you've already called, then
     ## those cases have to be handled separately, since for instance if 
-    ## someone's raised you exactly one more big blind, then you should fold, but it will look like 
+    ## someone's raised you exactly one more big blind, 
+    ## then you should fold, but it will look like 
     ## nobody's raised yet since it'll again be one big blind to you.
     a1 = 0
     bigb = dealer1 + 2

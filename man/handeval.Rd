@@ -20,9 +20,7 @@ vector of numbers of your cards and the board cards.
 corresponding suits of your cards and the board cards.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 If you have a straight flush, then it will return a value in 
 the 8 million to 9 million range, if you have four of a kind, then it will 
@@ -47,21 +45,13 @@ be higher for the first player than the second.
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Frederic Paik Schoenberg
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 boardcards = c(4,5,6,8,13)
 boardsuits = c(2,3,2,2,2)

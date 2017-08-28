@@ -16,28 +16,18 @@ flushdraw1(x)
 Suits of your cards and the board cards (together, as a vector).
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 returns the number you have of a suit, i.e. 4 if you have a flush draw, or 
 5 (or more) if you have a flush already.
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Frederic Paik Schoenberg
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 x = c(1,2,4,1,3,1,1)
 flushdraw1(x)

@@ -8,7 +8,9 @@ Play a hand of Texas Hold'em
 Used in tourn1() to play a single hand of Texas Hold'em.
 }
 \usage{
-hand1(numattable1, playerseats1, chips1, blinds1, dealer1, ntable1, myfast1, t1, t2, chipstart1, lowercut1, decision1)
+hand1(numattable1, playerseats1, chips1, blinds1, dealer1, ntable1, 
+myfast1, t1, t2, chipstart1, lowercut1, decision1, 
+name1 = c("vera","william","xena","yosef","zelda"))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -48,9 +50,9 @@ lower plotting threshold for a player's number of chips (the y axis)
   \item{decision1}{
 a vector of the players' codes
 }
+  \item{name1}{
+names of the players
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
 }
 \value{
 %%  ~Describe the value returned
@@ -59,28 +61,21 @@ a vector of the players' codes
   \item{draw1 }{2 if the hand is to be shown graphically, or 0 if not}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Frederic Paik Schoenberg
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
 
 ## The function is currently defined as
-function(numattable1, playerseats1, chips1, blinds1, dealer1, ntable1,myfast1,t1,t2,chipstart1,lowercut1, decision1){
+function(numattable1, playerseats1, chips1, blinds1, dealer1, 
+ntable1,myfast1,t1,t2,chipstart1,lowercut1, decision1){
     ## numattable1 = number of players at the table
     ## playerseats1 = list of indices, who's in seat 1, seat 2, etc.
     ## chips1 = list of chips left, FOR PLAYERS AT THIS TABLE ONLY!
@@ -100,12 +95,14 @@ function(numattable1, playerseats1, chips1, blinds1, dealer1, ntable1,myfast1,t1
     chips2 = calcwin1(numattable1,playerseats1, b3, b7) 
     draw1 = 0
     u21 = runif(1)
-    if(((max(chips2/(chips1+.01)) > 1.99) && (u21 < t1)) || ((max(chips1/(chips2+.01)) > 99) && (u21 < t2))) {
+    if(((max(chips2/(chips1+.01)) > 1.99) && 
+    (u21 < t1)) || ((max(chips1/(chips2+.01)) > 99) && (u21 < t2))) {
 	if(myfast1 < 1) {
 	    text(1,lowercut1,"click to continue",cex=.7)
 	    locator(1)
 	}
-	mygraphics1(numattable1,playerseats1,chips1,blinds1,dealer1,b3,b4,b5,b6,b7,chips2,ntable1,myfast1,chipstart1,
+	mygraphics1(numattable1,playerseats1,chips1,blinds1,dealer1,
+	b3,b4,b5,b6,b7,chips2,ntable1,myfast1,chipstart1,
 		    name1,lowercut1) 
 	draw1 = 2
     }

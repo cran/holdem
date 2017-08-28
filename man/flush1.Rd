@@ -31,21 +31,11 @@ or 15^4 times top number + 15^3 times 2nd-highest + ... if you do.
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Frederic Paik Schoenberg
 }
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 x = c(2,14,8,8,5,3,4)
 y = c(1,2,4,1,1,1,1)

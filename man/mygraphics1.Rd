@@ -8,7 +8,8 @@ Graphically show a poker hand
 On the plotting device, show a poker hand. Used by tourn1() and hand1().
 }
 \usage{
-mygraphics1(numattable1, playerseats1, chips1, blinds1, dealer1, b3, b4, b5, b6, b7, chips2, ntable1, myfast1, chipstart1, name1, lowercut1)
+mygraphics1(numattable1, playerseats1, chips1, blinds1, 
+dealer1, b3, b4, b5, b6, b7, chips2, ntable1, myfast1, chipstart1, name1, lowercut1)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -61,31 +62,13 @@ mygraphics1(numattable1, playerseats1, chips1, blinds1, dealer1, b3, b4, b5, b6,
 %%     ~~Describe \code{lowercut1} here~~
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Frederic Paik Schoenberg
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
@@ -117,7 +100,8 @@ function(numattable1, playerseats1, chips1, blinds1, dealer1,b3,b4,b5,b6,b7,chip
     writebets1(b4,1,numattable1,b3,playerseats1,chips1,chips2,0,myfast1,name1)
 	## Now flop:
     for(j in c(1:3)){
-	text(j/6*(10+10*numattable1),15,cardname1[b3$brdnum1[j]],col=suitname1[b3$brdsuit1[j]],cex=2)
+	text(j/6*(10+10*numattable1),15,
+	cardname1[b3$brdnum1[j]],col=suitname1[b3$brdsuit1[j]],cex=2)
     }
     if(myfast1<1) locator(1)
     over1 = b4$all1
@@ -145,7 +129,8 @@ function(numattable1, playerseats1, chips1, blinds1, dealer1,b3,b4,b5,b6,b7,chip
 	}
     }
     if(myfast1<1) locator(1)
-    plot(c(0,nplayers1+1),c(lowercut1,chipstart1*nplayers1),type="n",xlab="player number",ylab="chips",log="y")
+    plot(c(0,nplayers1+1),c(lowercut1,chipstart1*nplayers1),
+    type="n",xlab="player number",ylab="chips",log="y")
   } ## end of mygraphics1
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

@@ -37,9 +37,7 @@ how many tables remain in the tournament.
 vector of the functions governing the players' betting
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
@@ -55,21 +53,13 @@ in the hand is all over.}
 \item{out1}{list of who is out, i.e. who folded this round or had folded 
 previously.}
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Frederic Paik Schoenberg
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
@@ -142,12 +132,15 @@ matrix(c(b3$plnum1[ind1,],b3$plsuit1[ind1,]),ncol=2)
 		    ntable1))
 	   # cat("\n Seat ", ind1,": b1 was ",b1," and it was ",currentbet-bet1[ind1]," to him.")
 	   if(b1 > chips1[ind1]) b1 = chips1[ind1] ## if bet is more than you have, fix that.
-	   if(b1 > bmax1 - bet1[ind1]) b1 = bmax1 - bet1[ind1] ## can't bet more than anyone else who's in has left
+	   if(b1 > bmax1 - bet1[ind1]) b1 = bmax1 - bet1[ind1] 
+	   ## can't bet more than anyone has left
 	    ## if bet is between 0.5 and the amount to you, make it a call.
-	   if((b1 > 0.5) && (b1 < currentbet - bet1[ind1])) b1 = min(chips1[ind1],currentbet - bet1[ind1])
+	    if((b1 > 0.5) && (b1 < currentbet - bet1[ind1])) b1 = min(chips1[ind1],
+	    currentbet - bet1[ind1])
 	   ## if bet is a raise of less than the big blind, make it a raise of the big blind.
 	   raiseamt1 = b1 - (currentbet - bet1[ind1])
-	   if((raiseamt1 > 0.5) && (raiseamt1 < blinds1[2])) b1 = min(blinds1[2] + currentbet - bet1[ind1],chips1[ind1])	       
+	   if((raiseamt1 > 0.5) && (raiseamt1 < blinds1[2])) b1 = min(blinds1[2] + 
+	   currentbet - bet1[ind1],chips1[ind1])	       
 	   # cat("Now b1 = ",b1,". Currentbet = ",currentbet,".\n")
 	   if(b1 > currentbet-bet1[ind1]+.5){ ## raise
 	       prevbet = currentbet
@@ -165,7 +158,8 @@ matrix(c(b3$plnum1[ind1,],b3$plsuit1[ind1,]),ncol=2)
 	       bet1[ind1] = roundbets[ind1,round1]
 	       in1[ind1] = 1
 	       chips1[ind1] = chips1[ind1] - b1
-	   } else if((chips1[ind1]>0.5) && (b1 < min(chips1[ind1],currentbet-bet1[ind1])-.5)){ ## fold
+	   } else if((chips1[ind1]>0.5) && (b1 < min(chips1[ind1],
+	   currentbet-bet1[ind1])-.5)){ ## fold
 	       in1[ind1] = 0
 	       myout1 = 2
 	   }
@@ -182,7 +176,8 @@ matrix(c(b3$plnum1[ind1,],b3$plsuit1[ind1,]),ncol=2)
    z3 = 0 ## now see if all the betting is over: if so, let z3 = 2.
    if(sum(chips1[c(1:numattable1)[in1 > .5]] > .5) < 1.5) z3 = 2
    # cat("\n Round 1 over.  z3 = ",z3,". in1 = ",in1,".\n")
-   list(i1=in1,p1=pot1,c1=chips1,rb=roundbets,all1=z3,bl1 = betlist1,il1 = indlist1,out1=outlist1)
+   list(i1=in1,p1=pot1,c1=chips1,rb=roundbets,all1=z3,bl1 = betlist1,
+   il1 = indlist1,out1=outlist1)
   } ## end of bid1
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
